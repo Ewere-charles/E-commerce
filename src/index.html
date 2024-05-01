@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./output.css">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="stylesheet" href="https://fonts.google.com/specimen/Kumbh+Sans"> -->
+  <title>Sneakers</title>
+</head>
+<body class="h-screen text-black">
+
+  <header class="sm:px-[8%] px-4 w-full h-auto flex items-start justify-center fixed top-0 z-20 bg-white">
+    <div class=" w-full h-full fixed z-40 bg-[#100f0fe4] hidden" id="overlay">
+      <ul class="w-2/3 h-full pt-[100px] px-4 sm:px[8%] absolute bg-white top 0 left-[-100%] flex flex-col gap-8 font-bold text-slate-900" id="menu">
+        <li class="hover:text-orange-500 cursor-pointer">Collection</li>
+        <li class="hover:text-orange-500 cursor-pointer">Men</li>
+        <li class="hover:text-orange-500 cursor-pointer">Women</li>
+        <li class="hover:text-orange-500 cursor-pointer">About</li>
+        <li class="hover:text-orange-500 cursor-pointer">Contact</li>
+      </ul>
+    </div>
+
+    
+    <nav class="w-full py-5 flex items-center justify-between border-b-[2px] border-slate-200 relative">
+      <div class="sm:w-[400px] w-full h-auto min-h-[250px] absolute bg-white z-30 right-0 sm:-right-2 top-[100px] sm:top-[100%] rounded-lg shadow-xl shadow-neutral-400 hidden items-start justify-start flex-col" id="cart">
+        <h3 class="w-full border-b-[2px] border-slate-200 py-5 px-5 font-bold text-neutral-500 text-lg">Cart</h3>
+        <div class="px-5 py-5 w-full flex-1 flex flex-col items-start justify-between gap-5">
+          <div class="flex items-center justify-center flex-1 w-full" id="cart_container">
+            <p class="text-neutral-500 font-semibold" id="empty">Your cart is empty</p>
+
+            <div class="w-[70px] h-[70px] hidden" id="cart_image_container">
+              <img id="cart_image" src="" alt="">
+            </div>
+
+            <div class=" text-slate-500 text-[20px] hidden flex-col items-start justify-start" id="product_details">
+              <h2 id="cart_product_name"></h2>
+                 <div class="flex items-center justify-start gap-3"><span class="flex items-center justify-start gap-1"><p id="price"></p><p id="quantity"></p></span> <span id="total" class="font-bold text-neutral-600"></span></div>
+            </div>
+
+          </div>
+          <button class="py-5 mb-[10px] w-full rounded-lg bg-orange-400 text-neutral-100 font-semibold text-lg hidden" id="check_out">Checkout</button>
+        </div>
+      </div>
+      <button class="me-3 block md:hidden relative z-50" id="hamburger">
+        <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/></svg>
+      </button>
+
+      <div class="text-slate-800 text-2xl text-800 main-text font-bold flex-[1]">Sneaker</div>
+
+      <ul class="flex-[4] items-center justify-start gap-8 text-slate-500 text-sm hidden md:flex">
+        <li>Collection</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+
+      <div class="flex-0 flex items-center justify-between gap-[30px]">
+        <button class="relative">
+          <div id="indicator" class="px-[10px] rounded-xl bg-orange-500 text-white font-semibold absolute -right-[5px] -top-[10px] text-[12px] hidden">1</div>
+          <svg id="cart_icon" class="hover:fill-orange-500 cursor-pointer fill-slate-600" width="30" height="28" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/></svg>
+        </button>
+        <img src="./images/image-avatar.png" alt="avatar" class="w-10">
+      </div>
+
+    </nav>
+  </header>
+
+  <div>
+
+  </div>
+
+  <section class="md:h-full min-h-full w-full text-white md:flex-row pt-[90px] md:pt-[150px] pb-[50px] flex flex-col items-center justify-start lg:gap-32 md:gap-[50px] md:px-[8%]">
+        <div class="w-full mb-12 md:mb-0 md:h-full md:w-[400px] xl:w-[450px] h-auto flex flex-col gap-4 items-center justify-center relative z-10">
+          <img src="./images/image-product-1.jpg" alt="" class="md:rounded-2xl mb-5 cursor-pointer" id="product_img">
+          <div class="md:flex align-center justify-between w-full hidden" id="thumbnail_control">
+
+            <div class="active w-1/5 rounded-xl overflow-hidden">
+              <img class="thumbnail active_image w-full" src="./images/image-product-1-thumbnail.jpg" alt="">
+            </div>
+
+            <div class="w-1/5 rounded-2xl overflow-hidden">
+              <img class="thumbnail rounded-xl w-full" src="./images/image-product-2-thumbnail.jpg" alt="">
+            </div>
+
+            <div class="w-1/5 rounded-2xl overflow-hidden">
+              <img class="thumbnail rounded-xl w-ful" src="./images/image-product-3-thumbnail.jpg" alt="">
+            </div>
+
+            <div class="w-1/5 rounded-2xl overflow-hidden">
+              <img class="thumbnail rounded-xl w-full" src="./images/image-product-4-thumbnail.jpg" alt="">
+            </div>
+
+          </div>
+
+          <button class="md:hidden absolute top-[50%] sm:left-[8%] left-4 bg-white rounded-full w-10 h-10 flex items-center justify-center prev" id="prev">
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+
+          <button class="md:hidden absolute top-[50%] sm:right-[8%] right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center next" id="next">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+          </button>
+
+        </div>
+
+
+        <div class="w-full md:w-2/3 lg:w-1/2 md:flex-1 text-start px-4">
+          <h2 class="text-orange-400 font-semibold text-sm" >SNEAKER COMPANY</h2>
+          <h1 id="product_name" class="capitalize text-2xl lg:text-5xl md:text-4xl text-slate-900 font-bold mt-4 mb-6">Fall limited edition sneakers</h1>
+          <p class="text-slate-500 text-sm w-full lg:w-3/4" >These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, theu'll withstand everything the weather can offer.</p>
+          <div class="flex items-center justify-between md:flex-col md:items-start md:gap-2  mt-4 mb-6 ">
+            <div class="flex items-center justify-start">
+              <p class="text-slate-900 font-bold lg:text-3xl md:text-2xl me-5">$125.00</p> <span class="bg-orange-100 text-orange-600 text-[14px] px-[5px] py-[2px] rounded font-bold">50%</span>
+            </div>
+
+            <p class="text-slate-400 line-through text-[14px] font-semibold" id="price">$250.00</p>
+          </div>
+
+          <div class="w-full flex flex-col items-start sm:items-center justify-start gap-4 sm:flex-row">
+            <div class="w-full h-[40px] sm:w-2/5 lg:w-[150px] md:w-[100px]  rounded flex items-center justify-start">
+              <button class=" bg-slate-100 w-1/3 flex items-center justify-center h-full" id="minus">
+                <svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a"/></svg>
+              </button>
+              <div class=" bg-slate-100 h-full w-1/3 flex items-center justify-center text-slate-800 font-bold">0</div>
+              <button class=" bg-slate-100 w-1/3 flex items-center justify-center h-full" id="plus">
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b"/></svg>
+              </button>
+            </div>
+
+            <button class=" w-full sm:w-3/5 lg:w-[250px] md:w-[200px] py-3 rounded-lg text-white font-bold text-sm bg-orange-500 flex items-center justify-center gap-5" id="add_to_cart">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="white" fill-rule="nonzero"/></svg>
+              Add to cart
+            </button>
+          </div>
+        </div>
+  </section>
+
+
+
+  <script src="./index.js"></script>
+</body>
+</html>
