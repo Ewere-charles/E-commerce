@@ -486,41 +486,46 @@ productImage.addEventListener('click', () => {
                 productDetails.classList.add('flex');
                 productDetails.classList.remove('hidden');
             }
+            
+        indicator.classList.remove('hidden');
 
     }
 
     function quantityCounter(counting, newPrice){
-
+        if(logic === 3){
+        indicator.classList.remove('hidden');
+        }
         quantity.innerHTML = counting;
         total.innerHTML = `$${newPrice * counting}`;
-        indicator.classList.remove('hidden');
         indicator.innerHTML = counting;
     }
 
-    const plus = document.querySelector('#plus');
-    const minus = document.querySelector('#minus');
-
-plus.addEventListener('click', ()=>{
-    plus.classList.add('opacity-60');
-    setTimeout(()=>{
-        plus.classList.remove('opacity-60');
-    },200);
-
-    quantityCount++;
-    quantityCounter(quantityCount, currentPrice);
-})
-
-minus.addEventListener('click', ()=>{
-    minus.classList.add('opacity-60');
-    setTimeout(()=>{
-        minus.classList.remove('opacity-60');
-    },200);
-
-    quantityCount = Math.max(quantityCount - 1, 1);
-    quantityCounter(quantityCount, currentPrice);
-})
 
 
     const addToCart = document.querySelector('#add_to_cart');
     addToCart.addEventListener('click', cartHandler);
 
+
+    const plus = document.querySelector('#plus');
+    const minus = document.querySelector('#minus');
+
+    plus.addEventListener('click', ()=>{
+        plus.classList.add('opacity-60');
+        setTimeout(()=>{
+            plus.classList.remove('opacity-60');
+        },200);
+    
+        quantityCount++;
+        quantityCounter(quantityCount, currentPrice);
+    })
+    
+    minus.addEventListener('click', ()=>{
+        minus.classList.add('opacity-60');
+        setTimeout(()=>{
+            minus.classList.remove('opacity-60');
+        },200);
+    
+        quantityCount = Math.max(quantityCount - 1, 1);
+        quantityCounter(quantityCount, currentPrice);
+    })
+    

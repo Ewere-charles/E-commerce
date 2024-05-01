@@ -27,14 +27,14 @@
       <div class="sm:w-[400px] w-full h-auto min-h-[250px] absolute bg-white z-30 right-0 sm:-right-2 top-[100px] sm:top-[100%] rounded-lg shadow-xl shadow-neutral-400 hidden items-start justify-start flex-col" id="cart">
         <h3 class="w-full border-b-[2px] border-slate-200 py-5 px-5 font-bold text-neutral-500 text-lg">Cart</h3>
         <div class="px-5 py-5 w-full flex-1 flex flex-col items-start justify-between gap-5">
-          <div class="flex items-center justify-center flex-1 w-full" id="cart_container">
+          <div class="flex items-center justify-center flex-1 w-full gap-2" id="cart_container">
             <p class="text-neutral-500 font-semibold" id="empty">Your cart is empty</p>
 
             <div class="w-[70px] h-[70px] hidden" id="cart_image_container">
-              <img id="cart_image" src="" alt="">
+              <img id="cart_image" src="" alt="" class="rounded-lg">
             </div>
 
-            <div class=" text-slate-500 text-[20px] hidden flex-col items-start justify-start" id="product_details">
+            <div class=" text-slate-500 sm:text-[20px] hidden flex-col items-start justify-start flex-1" id="product_details">
               <h2 id="cart_product_name"></h2>
                  <div class="flex items-center justify-start gap-3"><span class="flex items-center justify-start gap-1"><p id="price"></p><p id="quantity"></p></span> <span id="total" class="font-bold text-neutral-600"></span></div>
             </div>
@@ -50,11 +50,11 @@
       <div class="text-slate-800 text-2xl text-800 main-text font-bold flex-[1]">Sneaker</div>
 
       <ul class="flex-[4] items-center justify-start gap-8 text-slate-500 text-sm hidden md:flex">
-        <li>Collection</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li class="md:hover:text-orange-400 md:hover:font-bold md:hover:border-b md:hover:border-orange-400 md:hover:h-full">Collection</li>
+        <li class="md:hover:text-orange-400 md:hover:font-bold md:hover:border-b md:hover:border-orange-400 md:hover:h-full">Men</li>
+        <li class="md:hover:text-orange-400 md:hover:font-bold md:hover:border-b md:hover:border-orange-400 md:hover:h-full">Women</li>
+        <li class="md:hover:text-orange-400 md:hover:font-bold md:hover:border-b md:hover:border-orange-400 md:hover:h-full">About</li>
+        <li class="md:hover:text-orange-400 md:hover:font-bold md:hover:border-b md:hover:border-orange-400 md:hover:h-full">Contact</li>
       </ul>
 
       <div class="flex-0 flex items-center justify-between gap-[30px]">
@@ -62,7 +62,7 @@
           <div id="indicator" class="px-[10px] rounded-xl bg-orange-500 text-white font-semibold absolute -right-[5px] -top-[10px] text-[12px] hidden">1</div>
           <svg id="cart_icon" class="hover:fill-orange-500 cursor-pointer fill-slate-600" width="30" height="28" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/></svg>
         </button>
-        <img src="./images/image-avatar.png" alt="avatar" class="w-10">
+        <img src="./images/image-avatar.png" alt="avatar" class="w-10 hover:border-2 hover:border-orange-400 rounded-full">
       </div>
 
     </nav>
