@@ -574,10 +574,6 @@ video {
   top: -10px;
 }
 
-.left-0 {
-  left: 0px;
-}
-
 .left-4 {
   left: 1rem;
 }
@@ -598,20 +594,24 @@ video {
   top: 0px;
 }
 
-.top-\[-20px\] {
-  top: -20px;
-}
-
 .top-\[100px\] {
   top: 100px;
 }
 
-.top-\[40\%\] {
-  top: 40%;
-}
-
 .top-\[50\%\] {
   top: 50%;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.top-\[-20px\] {
+  top: -20px;
+}
+
+.top-\[40\%\] {
+  top: 40%;
 }
 
 .z-10 {
@@ -686,6 +686,10 @@ video {
   height: 70px;
 }
 
+.h-\[80px\] {
+  height: 80px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -696,10 +700,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[80px\] {
-  height: 80px;
 }
 
 .min-h-\[250px\] {
@@ -835,10 +835,6 @@ video {
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
-.bg-\[\#000000f5\] {
-  background-color: #000000f5;
-}
-
 .bg-\[\#100f0fe4\] {
   background-color: #100f0fe4;
 }
@@ -868,12 +864,16 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.fill-orange-500 {
-  fill: #f97316;
+.bg-\[\#000000f5\] {
+  background-color: #000000f5;
 }
 
 .fill-slate-600 {
   fill: #475569;
+}
+
+.fill-orange-500 {
+  fill: #f97316;
 }
 
 .fill-white {
@@ -923,12 +923,12 @@ video {
   padding-top: 100px;
 }
 
-.pt-\[50px\] {
-  padding-top: 50px;
-}
-
 .pt-\[90px\] {
   padding-top: 90px;
+}
+
+.pt-\[50px\] {
+  padding-top: 50px;
 }
 
 .text-start {
@@ -946,10 +946,6 @@ video {
 
 .text-\[14px\] {
   font-size: 14px;
-}
-
-.text-\[20px\] {
-  font-size: 20px;
 }
 
 .text-lg {
@@ -1057,12 +1053,12 @@ video {
   border-color: rgb(251 146 60 / var(--tw-border-opacity));
 }
 
-.hover\:fill-orange-400:hover {
-  fill: #fb923c;
-}
-
 .hover\:fill-orange-500:hover {
   fill: #f97316;
+}
+
+.hover\:fill-orange-400:hover {
+  fill: #fb923c;
 }
 
 .hover\:text-orange-500:hover {
@@ -1199,12 +1195,12 @@ video {
     padding-right: 8%;
   }
 
-  .md\:pt-0 {
-    padding-top: 0px;
-  }
-
   .md\:pt-\[150px\] {
     padding-top: 150px;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-2xl {
@@ -1219,19 +1215,6 @@ video {
 
   .md\:hover\:h-full:hover {
     height: 100%;
-  }
-
-  .md\:hover\:border-b:hover {
-    border-bottom-width: 1px;
-  }
-
-  .md\:hover\:border-orange-400:hover {
-    --tw-border-opacity: 1;
-    border-color: rgb(251 146 60 / var(--tw-border-opacity));
-  }
-
-  .md\:hover\:font-bold:hover {
-    font-weight: 700;
   }
 
   .md\:hover\:text-orange-400:hover {

@@ -80,7 +80,7 @@ thumbnails.forEach((thumbnail, tIndex) => {
 });
 
 function changeImage(number){
-    return productImage.setAttribute('src', `./images/image-product-${number + 1}.jpg`);
+    return productImage.setAttribute('src', `./src/images/image-product-${number + 1}.jpg`);
 }
 
 
@@ -302,7 +302,7 @@ productImage.addEventListener('click', () => {
 
 
           function modalChangeImage(modalNumber){
-            return modalProductImage.setAttribute('src', `./images/image-product-${modalNumber + 1}.jpg`);
+            return modalProductImage.setAttribute('src', `./src/images/image-product-${modalNumber + 1}.jpg`);
         }
   });
 
@@ -321,6 +321,8 @@ productImage.addEventListener('click', () => {
   const price = document.querySelector('#price');
   const cartImage = document.querySelector('#cart_image');
   const indicator = document.querySelector('#indicator');
+  const infoCart = document.querySelector('#info');
+  const storePrice = document.querySelector('#store_price');
 
 
   cartIcon.addEventListener('click', ()=>{
@@ -332,7 +334,7 @@ productImage.addEventListener('click', () => {
   })
   
   let cartItems = [];
-  let quantityCount = 0;
+  let quantityCount = 1;
   let logic = 0;
   let currentPrice = 0;
 
@@ -390,7 +392,7 @@ productImage.addEventListener('click', () => {
                             deleteBtn.classList.add('hidden');
 
                             logic = 1;
-                            quantityCount = 0;
+                            quantityCount = 1;
                             quantityCounter(quantityCount, item.price);
                             indicator.classList.add('hidden');
                             
@@ -446,7 +448,7 @@ productImage.addEventListener('click', () => {
                             deleteBtn.classList.add('hidden');
 
                             logic = 0;
-                            quantityCount = 0;
+                            quantityCount = 1;
                             quantityCounter(quantityCount, item.price);
                             indicator.classList.add('hidden');
                             
@@ -491,23 +493,34 @@ productImage.addEventListener('click', () => {
 
     }
 
+
     function quantityCounter(counting, newPrice){
         if(logic === 3){
         indicator.classList.remove('hidden');
         }
         quantity.innerHTML = counting;
-        total.innerHTML = `$${newPrice * counting}`;
+        total.innerHTML = `$${newPrice * counting}.00`;
         indicator.innerHTML = counting;
+        infoCart.innerHTML = counting;
+        counting === 0 ? storePrice.innerHTML= '$125.00': storePrice.innerHTML= `$${125 * counting}.00`;
     }
 
 
 
     const addToCart = document.querySelector('#add_to_cart');
-    addToCart.addEventListener('click', cartHandler);
+    addToCart.addEventListener('click', ()=>{
+        cartHandler(event);
+
+        addToCart.classList.add('opacity-60');
+        setTimeout(()=>{
+            addToCart.classList.remove('opacity-60');
+        },200);
+    });
 
 
     const plus = document.querySelector('#plus');
     const minus = document.querySelector('#minus');
+
 
     plus.addEventListener('click', ()=>{
         plus.classList.add('opacity-60');
